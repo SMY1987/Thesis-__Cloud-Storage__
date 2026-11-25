@@ -1,5 +1,5 @@
 Thesis-Cloud-Storage# (Дипломный проект)
-REST-сервис «Облачное хранилище»: загрузка, скачивание, переименование, удаление файлов и вывод списка файлов пользователя. Реализована авторизация по токену (header auth-token) согласно OpenAPI-спецификации Cloud API.
+REST-сервис «Облачное хранилище»: загрузка, скачивание, переименование, удаление файлов и вывод списка файлов пользователя. Реализована авторизация по токену (заголовок auth-token) в соответствии со спецификацией OpenAPI Cloud API.
 
 Стек
 Java 17, Spring Boot 3.3 (Web, Data JPA, Validation)
@@ -10,7 +10,7 @@ Docker / docker-compose
 Запуск
 Требуется Docker и Docker Compose.
 
-После запуска backend доступен по адресу: http://localhost:8080/cloud FRONT-приложение запускается отдельно на http://localhost:8081.
+После запуска бэкенд доступен по адресу: http://localhost:8080/cloud Фронт-приложение запускается отдельно на http://localhost:8081.
 
 Тестовый пользователь: логин user, пароль 12345.user
 
@@ -45,7 +45,7 @@ curl -X DELETE "http://localhost:8080/cloud/file?filename=renamed.txt" \
 curl -X POST http://localhost:8080/cloud/logout -H "auth-token: <токен>"
 Тесты
 mvn test
-Unit-тесты (Mockito) покрывают AuthService и FileStorageService. Интеграционные тесты (Testcontainers) проверяют полный сценарий: логин → загрузка → список → удаление.
+Юнит-тесты (Mockito) охватывают AuthService и FileStorageService. Интеграционные тесты (Testcontainers) проверяют полный сценарий: вход → загрузка → список → удаление.
 
 Структура проекта
 src/main/java/ru/example/cloud/
