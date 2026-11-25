@@ -1,0 +1,17 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /cloud
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:5432/cloud
+    username: ${DB_USER:cloud}
+    password: ${DB_PASSWORD:cloud}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+app:
+  storage-path: ${STORAGE_PATH:./storage}
+  max-upload-size: 10MB
